@@ -1,5 +1,5 @@
 const swiper = new Swiper(".slider", {
-  allowTouchMove: true,
+  allowTouchMove: false,
   on: {
     slideChange: function () {
       let activeSlide = this.activeIndex,
@@ -7,3 +7,12 @@ const swiper = new Swiper(".slider", {
     }
   }
 });
+const nextSlideButtons = document.querySelectorAll('.next-slide-button');
+
+nextSlideButtons.forEach(button=>{
+  button.addEventListener('click', async function (event) {
+    event.preventDefault();
+    swiper.slideNext();
+  });
+
+})
