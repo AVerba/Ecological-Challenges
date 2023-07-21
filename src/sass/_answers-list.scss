@@ -2,21 +2,24 @@ ul, li, button {
   margin: 0;
   padding: 0;
   text-decoration: 0;
-  list-style-type:none;
+  list-style-type: none;
 }
-.answers-list{
+
+.answers-list {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 25px;
+  //padding: 0 25px;
+  margin: 0 auto;
   opacity: 0;
   transform: translateY(1000px);
   animation: fade-in 3s forwards;
   animation-delay: 3s;
 
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -27,26 +30,49 @@ ul, li, button {
     transform: translateY(0);
   }
 }
-.answers-item{
-  width: 100%;
+
+.answers-item {
+  //width: 100%;
 }
-.answers-item:not(:last-child){
+
+.answers-item:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.answer-btn{
-  width: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 10px;
+.answer-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #fff;
-  border: 1px solid #10b5c4;
-  transition: all .2s linear;
-  background-color: #10b5c4;
-  font-weight: 300;
+  width: 500px;
+  height: 50px;
+  outline: none;
+  padding: 10px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+
+  background: rgba(17, 17, 17, 0.1);
+  border: none;
+  border-radius: 30px;
+  color: rgb(17, 17, 17);
+  cursor: pointer;
+
+  transition: background-color 0.4s ease 0s;
+  pointer-events: initial;
 }
-.answer-btn:hover{
+
+.answer-btn:hover {
   color: #fff;
   background-color: #10b5c4;
+}
+
+@media screen and (max-width: 1024px) {
+  .answer-btn {
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.45);
+  }
+
 }
